@@ -19,6 +19,8 @@
       font-size: 16px;
       color: #666;
       }
+      a{color: #BF5700}
+      
       h1 {
       padding: 10px 0;
       font-size: 32px;
@@ -137,7 +139,7 @@
       <u><h1>Pre-Registration</h1></u>
 	<h1>Sign up for early access and exclusive perks!</h1>
     <h1><a href="/signupperks">View Perks</a></h1>
-      <form action="/">
+      <form method="POST">
         <hr>
         <div class="account-type">
           <input type="radio" value="none" id="radioOne" name="account" checked/>
@@ -147,11 +149,11 @@
         </div>
         <hr>
         <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
+        <input type="text" name="email" id="email" placeholder="Email" required/>
         <label id="icon" for="name"><i class="fas fa-user"></i></label>
         <input type="text" name="name" id="name" placeholder="Name" required/>
         <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
+        <input type="password" name="password" id="password" placeholder="Password" required/>
         <hr>
         <div class="gender">
           <input type="radio" value="none" id="male" name="gender" checked/>
@@ -161,7 +163,7 @@
         </div>
         <hr>
         <div class="btn-block">
-          <p>By clicking Register, you agree on our <a href="https://www.mindlevelled.com/privacy-policy">Privacy Policy for mindlevelled</a>.</p>
+          <p>By clicking Register, you agree on our <a href="/privacy-policy">Privacy Policy for mindlevelled</a>.</p>
           <button type="submit" href="/">Submit</button>
         </div>
       </form>
