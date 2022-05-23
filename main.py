@@ -13,7 +13,7 @@ def home():
     password = request.form['password']
     gender = request.form['gender']
     users.register(account,email,name,password,gender)
-    return "Thanks"
+    return f"Thanks for signing up, email with details has been sent to {email}<br><a href='/'>Go home</a>"
   else:
     return render_template('registration.html')
 
