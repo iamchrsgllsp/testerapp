@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from app import users,database
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -20,9 +21,9 @@ def home():
 @app.route('/note',methods=["GET","POST"])
 def note():
     if request.method == "POST":
-      post = {'note':request.form['note'],"tags":request.form['tags'].replace(" ", "")}
-      database.createPost(post)
-      return post
+      post = {'user':"cgill033",'datePosted':datetime.now(),'note':request.form['note'],"tags":request.form['tags'].replace(" ", "")}
+      posted = database.createPost(post)
+      return posted
     else:
       return render_template('note.html')
   

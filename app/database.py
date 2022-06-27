@@ -5,5 +5,4 @@ def loginUser():
   print("User logged in")
 
 def createPost(post):
-  print(post['note'])
-  print(post['tags'])
+  return post
