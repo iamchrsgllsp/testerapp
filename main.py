@@ -21,8 +21,6 @@ def home():
 def note():
     if request.method == "POST":
       print(request.form['description'])
-      with open("note.txt","w") as note:
-        note.write(request.form['description'])
       return "note"
     else:
       return render_template('note.html')
