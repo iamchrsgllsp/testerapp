@@ -17,6 +17,17 @@ def home():
   else:
     return render_template('registration.html')
 
+@app.route('/note',methods=["GET","POST"])
+def note():
+    if request.method == "POST":
+      print(request.form['description'])
+      with open("note.txt","w") as note:
+        note.write(request.form['description'])
+      return "note"
+    else:
+      return render_template('note.html')
+  
+
 @app.route('/signupperks')
 def perks():
   return "Our perks our currently being finalised"
