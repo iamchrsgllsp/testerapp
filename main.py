@@ -20,7 +20,8 @@ def home():
 @app.route('/note',methods=["GET","POST"])
 def note():
     if request.method == "POST":
-      print(request.form['description'])
+      print(request.form['note'])
+      print(request.form['tags'])
       return "note"
     else:
       return render_template('note.html')
