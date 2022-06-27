@@ -18,14 +18,20 @@ def home():
   else:
     return render_template('registration.html')
 
-@app.route('/note',methods=["GET","POST"])
+@app.route('/api/createnote',methods=["GET","POST"])
 def note():
-    if request.method == "POST":
-      post = {'user':"cgill033",'datePosted':datetime.now(),'note':request.form['note'],"tags":request.form['tags'].replace(" ", "")}
-      posted = database.createPost(post)
-      return posted
+    if "DART" not in request.headers:
+      #This is for web-based
+      if request.method == "POST":
+        post = {'user':"cgill033",'datePosted':datetime.now(),'note':request.form['note'],"tags":request.form['tags'].replace(" ", "")}
+        posted = database.createPost(post)
+        return posted
+      else:
+        return render_template('note.html')
     else:
-      return render_template('note.html')
+      #This is for Flutter app
+      return {"data":"App based"}
+    
   
 
 @app.route('/signupperks')
